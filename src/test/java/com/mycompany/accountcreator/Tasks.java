@@ -106,6 +106,13 @@ public class Tasks {
         public static boolean checkTaskDescription(String description) {
         return description.length() <= 50;
     }
+        
+        //This Method creates and returns the taskID
+        public static String createTaskID(String taskName, String developerDetails, int taskNumber) {
+        String taskInitials = taskName.length() >= 2 ? taskName.substring(0, 2).toUpperCase() : taskName.toUpperCase();
+        String devSuffix = developerDetails.length() >= 3 ? developerDetails.substring(developerDetails.length() - 3).toUpperCase() : developerDetails.toUpperCase();
+        return taskInitials + ":" + taskNumber + ":" + devSuffix;
+    }
 
 }
      
