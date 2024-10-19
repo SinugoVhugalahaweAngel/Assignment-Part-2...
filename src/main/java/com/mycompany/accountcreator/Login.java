@@ -52,4 +52,12 @@ public class Login {
         this.lastName = lastName;
     }
     
+    //Getters and Setters for Password
+     public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
