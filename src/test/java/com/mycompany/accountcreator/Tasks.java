@@ -33,5 +33,22 @@ public class Tasks {
         developerDetails = new String[tasks];
         taskNumber = new int[tasks];
         taskDuration = new float[tasks];
+        
+        for (int i = 0; i < tasks; i++) {
+            // Input task name using JOptionPane
+            taskName[i] = JOptionPane.showInputDialog(null, "Enter Task Name:");
+
+            // Input task description with validation
+             while (true) {
+            String description = JOptionPane.showInputDialog("Enter Task Description (max 50 characters):");
+            if (checkTaskDescription(description)) {
+                taskDescription[i] = description;
+                // Show success message when description is valid
+                JOptionPane.showMessageDialog(null, "Task description is successful.");
+                break;
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid task description. Please try again.");
+            }
+        }
     
 }
