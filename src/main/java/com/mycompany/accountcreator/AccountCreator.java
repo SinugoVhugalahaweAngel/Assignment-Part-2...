@@ -37,5 +37,8 @@ public class AccountCreator {
         System.out.println("Enter Your Password containing a capital letter, number, special character and at least 8 characters long:");
         String password = sc.nextLine();
         
+         // Register the user using the provided username and password
+        String registrationMessage = login.registerUser(userName, password);
+        System.out.println(registrationMessage);
     }
 }
