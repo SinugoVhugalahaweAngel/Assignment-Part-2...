@@ -108,9 +108,9 @@ public class LoginTest {
         System.out.println("registerUser");
         String username = "Kyl_1";//valid username (with underscore)
         String password = "Ch&&sec@ke99!";// Valid password
-        Login instance = new Login(  "",  "");
+        Login instance = new Login(  username, password);
         String expResult = "User succesfully registered";
-        String result = instance.registerUser(username, password);
+        String result = instance.registerUser("username", "password");
         
         // Assert that the result matches the expected result
         assertEquals(expResult, result);
@@ -191,6 +191,32 @@ public class LoginTest {
         assertEquals(expResult, result);
         
     }
+    
+    @Test
+    public void testReturnLoginStatus_Invalid() {
+        System.out.println("returnLoginStatus");
+        boolean loginSuccess = false;
+        Login instance = new Login(  "Kyle!!!",  "password");
+       //  instance.firstName = "Angel";  // Set first nam
+        String expResult = "Username or password incorrect, please try again.";
+        String result = instance.returnLoginStatus(loginSuccess);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testReturnLoginStatus_Valid() {
+        System.out.println("returnLoginStatus");
+        boolean loginSuccess = true;
+        Login instance = new Login(  "Kyl_1",  "Ch&&sec@ke99!");
+        String expResult = "Welcome Angel sinugo , it is great to see you again.";
+        String result = instance.returnLoginStatus(loginSuccess);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
 }
     
     
