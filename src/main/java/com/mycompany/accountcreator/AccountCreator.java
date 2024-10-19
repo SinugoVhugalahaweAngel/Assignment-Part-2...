@@ -23,5 +23,10 @@ public class AccountCreator {
         System.out.println("Enter LastName:");
         String lastName = sc.nextLine();
         
+        
+         //Create login object
+        Login login = new Login(firstName, lastName); 
+        login.setFirstName(firstName);
+        login.setLastName(lastName);
     }
 }
