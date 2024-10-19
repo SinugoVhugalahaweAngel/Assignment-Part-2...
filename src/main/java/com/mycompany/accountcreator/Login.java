@@ -10,5 +10,12 @@ import java.util.Scanner;
  * @author RC_Student_lab
  */
 public class Login {
+    //Creating object for a scanner
+    private Scanner input = new Scanner(System.in);
+
+    private String userName;
+    private String firstName;
+    private String lastName;
+    private String password; 
     
 }
