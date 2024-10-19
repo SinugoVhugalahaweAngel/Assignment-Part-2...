@@ -22,4 +22,16 @@ public class Tasks {
     public static float totalHours = 0;
     public static int tasks = 0;
     
+     public static void addTasks() {
+        // Ask how many tasks to enter using JOptionPane
+        tasks = Integer.parseInt(JOptionPane.showInputDialog(null, "How many tasks would you like to enter?"));
+
+        taskDescription = new String[tasks];
+        taskID = new String[tasks];
+        menu = new String[tasks];
+        taskName = new String[tasks];
+        developerDetails = new String[tasks];
+        taskNumber = new int[tasks];
+        taskDuration = new float[tasks];
+    
 }
