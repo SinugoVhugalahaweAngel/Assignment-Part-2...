@@ -100,4 +100,22 @@ public class LoginTest {
        // fail("The test case is a prototype.");
     }
     
+     /**
+     * Test of registerUser method, of class Login.
+     */
+    @Test
+    public void testRegisterUser() {
+        System.out.println("registerUser");
+        String username = "Kyl_1";//valid username (with underscore)
+        String password = "Ch&&sec@ke99!";// Valid password
+        Login instance = new Login(  "",  "");
+        String expResult = "User succesfully registered";
+        String result = instance.registerUser(username, password);
+        
+        // Assert that the result matches the expected result
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
 }
