@@ -118,4 +118,16 @@ public class LoginTest {
         //fail("The test case is a prototype.");
     }
     
+    @Test
+    public void testRegisterUser_InvalidUsername() {
+        System.out.println("registerUser with invalid username");
+        String username = "Kyle!!!!!!";  // Invalid username (no underscore)
+        String password = "Ch&&sec@ke99!";  // Valid password
+        Login instance = new Login(  "password",  "username");
+        String expResult = "Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.";
+        String result = instance.registerUser(username, password);
+        // Assert that the result matches the expected result
+        assertEquals(expResult, result);
+    }
+    
 }
