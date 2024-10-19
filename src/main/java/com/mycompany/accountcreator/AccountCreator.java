@@ -28,5 +28,14 @@ public class AccountCreator {
         Login login = new Login(firstName, lastName); 
         login.setFirstName(firstName);
         login.setLastName(lastName);
+        
+        //Prompt the user to enter a username that meet  requirements
+         System.out.println("Enter Your Username containing an underscore(_) and no more than 5 characters:");
+         String userName = sc.nextLine();
+
+         //Prompt the user to enter a password that meets complexity requirements
+        System.out.println("Enter Your Password containing a capital letter, number, special character and at least 8 characters long:");
+        String password = sc.nextLine();
+        
     }
 }
