@@ -130,4 +130,26 @@ public class LoginTest {
         assertEquals(expResult, result);
     }
     
+    @Test
+    public void testRegisterUser_InvalidPassword() {
+        System.out.println("registerUser with invalid password");
+
+        // Set test data
+        String username = "Kyl_1";  // Valid username
+        String password = "password";  // Invalid password (no capital letter, no number, no special character)
+
+        // Create an instance of the login system
+        Login instance = new Login(  "password",  "username");
+
+        // Expected result for invalid password
+        String expResult = "Password is not correctly formatted, please ensure that the password contains at least 8 characters, a capital letter, a number, and a special character.";
+
+        // Perform the test
+        String result = instance.registerUser(username, password);
+
+        // Assert that the result matches the expected result
+        assertEquals(expResult, result);
+    }
 }
+    
+    
