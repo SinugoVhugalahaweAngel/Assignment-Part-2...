@@ -5,11 +5,19 @@
 package com.mycompany.accountcreator;
 //import Scanner
 import java.util.Scanner;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author RC_Student_lab
  */
 public class AccountCreator {
+    
+    // List to store tasks
+private static ArrayList<Task> tasks = new ArrayList<>();
+
+// Scanner object for user input
+private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
         // Create a Scanner object to read user input
