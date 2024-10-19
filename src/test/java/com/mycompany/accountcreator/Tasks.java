@@ -125,5 +125,20 @@ public class Tasks {
                 + "Task Duration: " + taskDuration[index] + " hours";
     }
 
+        
+    //This Method returns the total combined hours of all entered task
+    public static float returnTotalHours() {
+        boolean validInput = false;
+        float duration = 0;
+
+ while (!validInput) {
+
+            String input = JOptionPane.showInputDialog(null, "Enter the length of the task in hours (Example 1.5 = 1 and a half hours):");
+            duration = Float.parseFloat(input);
+            validInput = true;
+
+        }
+        return duration;
+    }
 }
      
