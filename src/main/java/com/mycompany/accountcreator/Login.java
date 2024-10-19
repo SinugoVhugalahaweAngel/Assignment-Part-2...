@@ -42,4 +42,14 @@ public class Login {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+    
+    // Getters and Setters for LastName
+     public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    
 }
