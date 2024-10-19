@@ -69,7 +69,10 @@ private static Scanner input = new Scanner(System.in);
          
            String loginMessage = login.returnLoginStatus(loginSuccess);
            System.out.println(loginMessage);
-}
-   }
 
+         if (login.loginUser(loginUserName, loginPassword)) {
+                JOptionPane.showMessageDialog(null, "Welcome to EasyKanban");
+   }
+        }
+}
 }
