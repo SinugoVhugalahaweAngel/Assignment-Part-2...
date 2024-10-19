@@ -18,4 +18,11 @@ public class Login {
     private String lastName;
     private String password; 
     
+    
+    // Constructor to initialize username and password
+    public Login(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
+
 }
