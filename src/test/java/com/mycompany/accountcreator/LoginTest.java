@@ -35,6 +35,26 @@ public class LoginTest {
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
     }
-   
+    
+   @Test
+       public void testCheckUserName_Invalid() {
+        System.out.println("checkUserName");
+        String username = "Kyle!!!!!!";
+       // Login instance = null;
+       Login instance = new Login(  username,  "Anything");
+        boolean expResult = false;
+        boolean result = instance.checkUserName(username);
+        assertEquals(expResult, result);
+        
+        // Print the result for manual verification
+        System.out.println("username is not correctly formatted,Please ensure that your username contains underscore and is no more than 5 characters  in length");
+
+        
+
+      
+        // TODO review the generated test code and remove the default call to fail.
+       // fail("The test case is a prototype.");
+    }
+    
     
 }
