@@ -168,6 +168,29 @@ public class LoginTest {
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
     }
+    
+     @Test
+    public void testLoginUserInvalid() {
+        System.out.println("loginUser with invalid credentials");
+
+        // Set up test data
+        String username = "Kyl_1";  //registered username
+        String password = "password";  // Incorrect password
+
+        // Create an instance of the login system and register a user
+        Login instance = new Login(  "username",  "password");
+        instance.registerUser("Kyl_1", "Ch&&sec@ke99!");  // Registered with valid credentials
+
+        // Expected result 
+        boolean expResult = false;
+
+       
+        boolean result = instance.loginUser(username, password);
+
+        // Assert that the result matches the expected output
+        assertEquals(expResult, result);
+        
+    }
 }
     
     
