@@ -48,5 +48,16 @@ public class AccountCreator {
        // Prompt the user to enter their username for login
          System.out.println("Enter your Username to login:");
          String loginUserName = sc.nextLine();
+         
+         // Prompt the user to enter their password for login
+         System.out.println("Enter your Password to login:");
+         String loginPassword = sc.nextLine();
+    
+         boolean loginSuccess = login.loginUser(loginUserName, loginPassword);
+         
+           String loginMessage = login.returnLoginStatus(loginSuccess);
+           System.out.println(loginMessage);
+}
+   }
 
 }
