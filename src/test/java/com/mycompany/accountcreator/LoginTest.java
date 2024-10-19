@@ -4,8 +4,10 @@
  */
 package com.mycompany.accountcreator;
 
-
-        
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -14,14 +16,15 @@ import static org.junit.Assert.*;
  * @author RC_Student_lab
  */
 public class LoginTest {
-     /**
+    /**
      * Test of checkUserName method, of class Login.
      */
     @Test
     public void testCheckUserName() {
         System.out.println("checkUserName");
         String username = "Kyl_1";
-        Login instance = null;
+       // Login instance = null;
+       Login instance = new Login(  username,  "Anything");
         boolean expResult = true;
         boolean result = instance.checkUserName(username);
         assertEquals(expResult, result);
@@ -33,4 +36,5 @@ public class LoginTest {
        // fail("The test case is a prototype.");
     }
    
+    
 }
