@@ -205,6 +205,7 @@ public class LoginTest {
         //fail("The test case is a prototype.");
     }
     
+   
     @Test
     public void testReturnLoginStatus_Valid() {
         System.out.println("returnLoginStatus");
@@ -216,7 +217,6 @@ public class LoginTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    
 }
     
     
