@@ -113,6 +113,17 @@ public class Tasks {
         String devSuffix = developerDetails.length() >= 3 ? developerDetails.substring(developerDetails.length() - 3).toUpperCase() : developerDetails.toUpperCase();
         return taskInitials + ":" + taskNumber + ":" + devSuffix;
     }
+        
+        //This method returns the task full tasks details of each task
+        public static String printTaskDetails(int index, String taskID) {
+        return "Task Status: " + menu[index] + "\n"
+                + "Developer Details: " + developerDetails[index] + "\n"
+                + "Task Number: " + taskNumber[index] + "\n"
+                + "Task Name: " + taskName[index] + "\n"
+                + "Task Description: " + taskDescription[index] + "\n"
+                + "Task ID: " + taskID + "\n"
+                + "Task Duration: " + taskDuration[index] + " hours";
+    }
 
 }
      
