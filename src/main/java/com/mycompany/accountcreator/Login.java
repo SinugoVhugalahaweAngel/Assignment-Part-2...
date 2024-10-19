@@ -33,4 +33,13 @@ public class Login {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+    
+    // Getters and Setters for FirstName
+     public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 }
