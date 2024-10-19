@@ -12,4 +12,14 @@ import javax.swing.JOptionPane;
  */
 public class Tasks {
     
+    private static String[] taskName;
+    private static int[] taskNumber;
+    private static String[] taskDescription;
+    private static String[] developerDetails;
+    private static float[] taskDuration;
+    private static String[] taskID;
+    private static String[] menu;
+    public static float totalHours = 0;
+    public static int tasks = 0;
+    
 }
