@@ -60,4 +60,12 @@ public class Login {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    // This Method ensures that any username contains an under score(_) and length is no more than 5
+    public boolean checkUserName(String username) {
+        // Ensure the username contains an underscore and is no more than 5 characters
+        return username.length() <= 5 && username.contains("_");
+    }
+    
+    
 }
