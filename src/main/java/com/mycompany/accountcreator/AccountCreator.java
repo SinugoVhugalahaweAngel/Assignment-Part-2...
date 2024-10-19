@@ -40,5 +40,13 @@ public class AccountCreator {
          // Register the user using the provided username and password
         String registrationMessage = login.registerUser(userName, password);
         System.out.println(registrationMessage);
-    }
+        
+        
+    //  If registration is successful, proceed to login
+        if (registrationMessage.equals("User successfully registered.")) {
+            
+       // Prompt the user to enter their username for login
+         System.out.println("Enter your Username to login:");
+         String loginUserName = sc.nextLine();
+
 }
