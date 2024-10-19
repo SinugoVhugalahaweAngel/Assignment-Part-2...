@@ -73,6 +73,32 @@ private static Scanner input = new Scanner(System.in);
          if (login.loginUser(loginUserName, loginPassword)) {
                 JOptionPane.showMessageDialog(null, "Welcome to EasyKanban");
    }
+         boolean quit = false;
+                while (!quit) {
+                    String statusInput = JOptionPane.showInputDialog(null, "1. Add Tasks\n2. Show Report\n3. Exit");
+
+                    int statusChoice = Integer.parseInt(statusInput);
+                    switch (statusChoice) {
+                        case 1: // Add tasks
+                            tasks.addTasks(); // Assuming addTasks() uses JOptionPane for input/output
+                            break;
+
+                        case 2: // Show report
+                            JOptionPane.showMessageDialog(null, "Coming Soon");
+                            break;
+
+                        case 3: // Quit
+                            quit = true;
+                            JOptionPane.showMessageDialog(null, "Exiting EasyKanban.");
+                            break;
+
+                        default:
+                            JOptionPane.showMessageDialog(null, "Invalid option. Please try again.");
+                    }
+                }
+    }
         }
 }
-}
+
+
+
