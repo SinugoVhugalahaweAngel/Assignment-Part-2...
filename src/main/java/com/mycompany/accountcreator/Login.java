@@ -25,4 +25,12 @@ public class Login {
         this.password = password;
     }
 
+    // Getters and Setters for userName
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 }
