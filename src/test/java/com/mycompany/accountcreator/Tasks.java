@@ -68,6 +68,38 @@ public class Tasks {
             JOptionPane.showMessageDialog(null, "Task Details:\n" + printTaskDetails(i, taskID[i]));
         }
     }
+     
+     /**
+ * Prompts the user to select a task status and returns the selected status.
+ * Valid options are "To Do", "Doing", and "Done".
+ */
+        public static String taskStatus() {
+        String status = "";
+        boolean validInput = false;
 
+        while (!validInput) {
+            String statusInput = JOptionPane.showInputDialog(null, "Select Task Status:\n1. To Do\n2. Doing\n3. Done");
+
+            int statusChoice = Integer.parseInt(statusInput);
+            switch (statusChoice) {
+                case 1:
+                    status = "To Do";
+                    validInput = true;
+                    break;
+                case 2:
+                    status = "Doing";
+                    validInput = true;
+                    break;
+                case 3:
+                    status = "Done";
+                    validInput = true;
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Invalid option. Please enter 1, 2, or 3.");
+            }
+        }
+
+        return status;
+    }
 }
      }
