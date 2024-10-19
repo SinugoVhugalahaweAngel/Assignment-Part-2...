@@ -101,5 +101,11 @@ public class Tasks {
 
         return status;
     }
+        
+        //This Method ensures that the task description is not more than 50 Characters
+        public static boolean checkTaskDescription(String description) {
+        return description.length() <= 50;
+    }
+
 }
-     }
+     
