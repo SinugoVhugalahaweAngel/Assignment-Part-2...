@@ -5,13 +5,25 @@
 package com.mycompany.accountcreator;
 //import Scanner
 import java.util.Scanner;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author RC_Student_lab
  */
 public class AccountCreator {
+    
+    // List to store tasks
+private static ArrayList<Task> tasks = new ArrayList<>();
+
+// Scanner object for user input
+private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
+        
+        //Object for task
+       Task tasks = new Task();
+        
         // Create a Scanner object to read user input
         Scanner sc = new Scanner(System.in);
 
@@ -57,7 +69,36 @@ public class AccountCreator {
          
            String loginMessage = login.returnLoginStatus(loginSuccess);
            System.out.println(loginMessage);
-}
-   }
 
+         if (login.loginUser(loginUserName, loginPassword)) {
+                JOptionPane.showMessageDialog(null, "Welcome to EasyKanban");
+   }
+         boolean quit = false;
+                while (!quit) {
+                    String statusInput = JOptionPane.showInputDialog(null, "1. Add Tasks\n2. Show Report\n3. Exit");
+
+                    int statusChoice = Integer.parseInt(statusInput);
+                    switch (statusChoice) {
+                        case 1: // Add tasks
+                            tasks.addTasks(); // Assuming addTasks() uses JOptionPane for input/output
+                            break;
+
+                        case 2: // Show report
+                            JOptionPane.showMessageDialog(null, "Coming Soon");
+                            break;
+
+                        case 3: // Quit
+                            quit = true;
+                            JOptionPane.showMessageDialog(null, "Exiting EasyKanban.");
+                            break;
+
+                        default:
+                            JOptionPane.showMessageDialog(null, "Invalid option. Please try again.");
+                    }
+                }
+    }
+        }
 }
+
+
+
