@@ -22,7 +22,7 @@ private static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         
         //Object for task
-        Task tasks = new Task();
+       Task tasks = new Task();
         
         // Create a Scanner object to read user input
         Scanner sc = new Scanner(System.in);
