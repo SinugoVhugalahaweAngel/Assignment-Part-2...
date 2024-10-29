@@ -24,7 +24,8 @@ public class LoginTest {
         System.out.println("checkUserName");
         String username = "Kyl_1";
        // Login instance = null;
-       Login instance = new Login(  username,  "Anything");
+       Login instance = new Login();
+       instance.setUserName(username);
         boolean expResult = true;
         boolean result = instance.checkUserName(username);
         assertEquals(expResult, result);
@@ -41,7 +42,8 @@ public class LoginTest {
         System.out.println("checkUserName");
         String username = "Kyle!!!!!!";
        // Login instance = null;
-       Login instance = new Login(  username,  "Anything");
+       Login instance = new Login();
+       instance.setUserName(username);
         boolean expResult = false;
         boolean result = instance.checkUserName(username);
         assertEquals(expResult, result);
@@ -66,7 +68,8 @@ public class LoginTest {
         
         //valid password ( meet complexity requirements)
         String password = "Ch&&sec@ke99!";
-        Login instance = new Login(  password,  "Anything");
+        Login instance = new Login();
+        instance.setPassword(password);
         boolean expResult = true;
         boolean result = instance.checkPasswordComplexity(password);
         
@@ -84,7 +87,8 @@ public class LoginTest {
         
         //Invalid password (does not meet complexity requirements)
         String password = "password";
-        Login instance = new Login(  password,  "Anything");
+        Login instance = new Login();
+        instance.setPassword(password);
         boolean expResult = false;
         boolean result = instance.checkPasswordComplexity(password);
         
@@ -108,9 +112,13 @@ public class LoginTest {
         System.out.println("registerUser");
         String username = "Kyl_1";//valid username (with underscore)
         String password = "Ch&&sec@ke99!";// Valid password
-        Login instance = new Login(  username, password);
-        String expResult = "User succesfully registered";
-        String result = instance.registerUser("username", "password");
+        String firstName ="";
+        String lastName = "";
+        Login instance = new Login();
+        //instance.registerUser(password,username,firstName,lastName);
+
+        String expResult = "User successfully registered.";
+        String result = instance.registerUser(username, password,firstName,lastName);
         
         // Assert that the result matches the expected result
         assertEquals(expResult, result);
@@ -123,9 +131,12 @@ public class LoginTest {
         System.out.println("registerUser with invalid username");
         String username = "Kyle!!!!!!";  // Invalid username (no underscore)
         String password = "Ch&&sec@ke99!";  // Valid password
-        Login instance = new Login(  "password",  "username");
+         String firstName ="";
+        String lastName = "";
+        Login instance = new Login();
+        instance.registerUser(password,username,firstName,lastName);
         String expResult = "Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.";
-        String result = instance.registerUser(username, password);
+        String result = instance.registerUser(username, password,firstName,lastName);
         // Assert that the result matches the expected result
         assertEquals(expResult, result);
     }
@@ -137,15 +148,16 @@ public class LoginTest {
         // Set test data
         String username = "Kyl_1";  // Valid username
         String password = "password";  // Invalid password (no capital letter, no number, no special character)
-
+        String firstName ="";
+        String lastName = "";
         // Create an instance of the login system
-        Login instance = new Login(  "password",  "username");
-
+        Login instance = new Login( );
+        instance.registerUser(password,username,firstName,lastName);
         // Expected result for invalid password
         String expResult = "Password is not correctly formatted, please ensure that the password contains at least 8 characters, a capital letter, a number, and a special character.";
 
         // Perform the test
-        String result = instance.registerUser(username, password);
+        String result = instance.registerUser(username, password,lastName,firstName);
 
         // Assert that the result matches the expected result
         assertEquals(expResult, result);
@@ -161,7 +173,9 @@ public class LoginTest {
         String userName = "Kyl_1";
         String password = "Ch&&sec@ke99!";
          // Create an instance of the login system
-        Login instance = new Login(  "userName",  "password");
+        Login instance = new Login( );
+        instance.setUserName(userName);
+        instance.setPassword(password);
         boolean expResult = true;
         boolean result = instance.loginUser(userName, password);
         assertEquals(expResult, result);
@@ -178,8 +192,10 @@ public class LoginTest {
         String password = "password";  // Incorrect password
 
         // Create an instance of the login system and register a user
-        Login instance = new Login(  "username",  "password");
-        instance.registerUser("Kyl_1", "Ch&&sec@ke99!");  // Registered with valid credentials
+        Login instance = new Login(  );
+        //instance.registerUser("username"," password");  // Registered with valid credentials
+        instance.setUserName(username);
+        instance.setPassword("Ch&&sec@ke99!");
 
         // Expected result 
         boolean expResult = false;
@@ -196,10 +212,11 @@ public class LoginTest {
     public void testReturnLoginStatus_Invalid() {
         System.out.println("returnLoginStatus");
         boolean loginSuccess = false;
-        Login instance = new Login(  "Kyle!!!",  "password");
-       //  instance.firstName = "Angel";  // Set first nam
+        String firstName = "Angel";
+        String lastName = "Sinugo";
+        Login instance = new Login( );
         String expResult = "Username or password incorrect, please try again.";
-        String result = instance.returnLoginStatus(loginSuccess);
+        String result = instance.returnLoginStatus(loginSuccess,firstName,lastName);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -210,9 +227,11 @@ public class LoginTest {
     public void testReturnLoginStatus_Valid() {
         System.out.println("returnLoginStatus");
         boolean loginSuccess = true;
-        Login instance = new Login(  "Kyl_1",  "Ch&&sec@ke99!");
-        String expResult = "Welcome Angel sinugo , it is great to see you again.";
-        String result = instance.returnLoginStatus(loginSuccess);
+        Login instance = new Login();
+        String firstName = "Angel";
+        String lastName = "Sinugo";
+        String expResult = "Welcome " + firstName + " " + lastName + ", it is great to see you again.";
+        String result = instance.returnLoginStatus(loginSuccess,firstName,lastName);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
