@@ -141,11 +141,26 @@ public class TaskTest {
     @Test
     public void testCreateTaskID_2() {
         System.out.println("createTaskID");
+        
+    // Initialize test inputs
+    // Define a different task name to generate another task ID
         String taskName = "Add Task Feature";
+        
+    // Define a different developer name to test varied input handling
         String developerDetails = "Mike Smith";
+        
+    // Set the task number as part of the task ID   
         int taskNumber = 0;
+        
+    // Define the expected result, where the task ID format is assumed to be:
+    // the first two letters of the task name, the task number, and
+    // the last three letters of the developer's last name
         String expResult = "AD:0:ITH";
+        
+    // Call the createTaskID method with the specified inputs to generate the task ID
         String result = Task.createTaskID(taskName, developerDetails, taskNumber);
+    
+    // Assert that the actual task ID matches the expected result
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
