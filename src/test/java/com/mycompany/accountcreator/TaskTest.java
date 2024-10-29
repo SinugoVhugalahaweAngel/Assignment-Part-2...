@@ -217,7 +217,7 @@ public class TaskTest {
     public void testReturnTotalHours_4() {
         System.out.println("returnTotalHours");
         
-     // Define the expected total hours (55 hours) for this test case
+     // Define the expected total hours (11 hours) for this test case
         float expResult = 11F;
         
     // Call the returnTotalHours method to get the actual total hours
@@ -232,8 +232,14 @@ public class TaskTest {
     @Test
     public void testReturnTotalHours_5() {
         System.out.println("returnTotalHours");
+        
+    // Define the expected total hours (1 hours) for this test case
         float expResult = 1F;
+        
+    // Call the returnTotalHours method to get the actual total hours
         float result = Task.returnTotalHours();
+        
+    // Assert that the actual total hours match the expected total hours
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
