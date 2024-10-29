@@ -50,8 +50,14 @@ public class TaskTest {
     @Test
     public void testTaskStatus_3() {
         System.out.println("taskStatus");
+        
+        // Define the expected result when the task status is set to "Doing"
         String expResult = "Done";
+        
+        // Call the taskStatus method to get the actual result
         String result = Task.taskStatus();
+        
+         // Check if the actual result matches the expected result
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
