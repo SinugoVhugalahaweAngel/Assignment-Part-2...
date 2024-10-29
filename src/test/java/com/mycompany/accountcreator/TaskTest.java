@@ -4,10 +4,7 @@
  */
 package com.mycompany.accountcreator;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import javax.swing.JOptionPane;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -16,81 +13,42 @@ import static org.junit.Assert.*;
  * @author RC_Student_lab
  */
 public class TaskTest {
-    
-    public TaskTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    /**
-     * Test of addTasks method, of class Task.
-     */
-    @Test
-    public void testAddTasks() {
-       // System.out.println("addTasks");
-       //task tasks = new Task();
-        /*//Task.addTasks();
-        Task.taskName[0]="Login Feature";
-        Task.taskDescription[0] = "Create login to authenticate users";
-        Task.developerDetails[0] = "Robyn Harrison";
-        task.taskDuration[0] = 8;
-        task.taskStatus[0] = "To Do";
-        task.taskID[0] = task.createTaskID(task.taskName[0], 1, task.developerDetails[0]);
-*/
-        
-        Task.taskName = new String[1];  // Assuming you want to add only one task
-        Task.taskDescription = new String[1];
-        Task.developerDetails = new String[1];
-        Task.taskDuration = new float[1];
-        Task.menu = new String[1];
-        Task.taskID = new String[1];  // Assuming you forgot to initialize this
-
-// Assign values to the arrays
-         Task.taskName[0] = "Login Feature";
-         Task.taskDescription[0] = "Create login to authenticate users";
-         Task.developerDetails[0] = "Robyn Harrison";
-         Task.taskDuration[0] = 8;
-         Task.menu[0] = "To Do";
-        
-         // Correct the method call to createTaskID
-Task.taskID[0] = Task.createTaskID(Task.taskName[0], Task.developerDetails[0], 1);
-
-// Print the details to verify
-System.out.println("Task Name: " + Task.taskName[0]);
-System.out.println("Task Description: " + Task.taskDescription[0]);
-System.out.println("Developer Details: " + Task.developerDetails[0]);
-System.out.println("Task Duration: " + Task.taskDuration[0] + " hours");
-System.out.println("Task Status: " + Task.menu[0]);
-System.out.println("Task ID: " + Task.taskID[0]);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-
+   
     /**
      * Test of taskStatus method, of class Task.
      */
     @Test
     public void testTaskStatus() {
         System.out.println("taskStatus");
-        String expResult = "";
+        
+        // Define the expected result when the task status is set to "To Do"
+        String expResult = "To Do";
+        
+       // Call the taskStatus method to get the actual result
+        String result = Task.taskStatus();
+        
+        // Check if the actual result matches the expected result
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    @Test
+    public void testTaskStatus_2() {
+        System.out.println("taskStatus");
+        String expResult = "Doing";
         String result = Task.taskStatus();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
+    }
+    @Test
+    public void testTaskStatus_3() {
+        System.out.println("taskStatus");
+        String expResult = "Done";
+        String result = Task.taskStatus();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -99,12 +57,24 @@ System.out.println("Task ID: " + Task.taskID[0]);
     @Test
     public void testCheckTaskDescription() {
         System.out.println("checkTaskDescription");
-        String description = "";
-        boolean expResult = false;
+        String description = "Create login to authenticate users";
+        boolean expResult = true;
         boolean result = Task.checkTaskDescription(description);
         assertEquals(expResult, result);
+        System.out.print("Task succesfully captured");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
+    }
+    @Test
+    public void testCheckTaskDescription_Invalid() {
+        System.out.println("checkTaskDescription");
+        String description = "Create login to authenticate users in the login classs ";
+        boolean expResult =false;
+        boolean result = Task.checkTaskDescription(description);
+        assertEquals(expResult, result);
+        System.out.print("Please enter a task description of less than 50 characters");
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -113,42 +83,90 @@ System.out.println("Task ID: " + Task.taskID[0]);
     @Test
     public void testCreateTaskID() {
         System.out.println("createTaskID");
-        String taskName = "";
-        String developerDetails = "";
+        String taskName = "Login Feature";
+        String developerDetails = "Robyn Harrison";
         int taskNumber = 0;
-        String expResult = "";
+        String expResult = "LO:0:SON";
         String result = Task.createTaskID(taskName, developerDetails, taskNumber);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of printTaskDetails method, of class Task.
-     */
     @Test
-    public void testPrintTaskDetails() {
-        System.out.println("printTaskDetails");
-        int index = 0;
-        String taskID = "";
-        String expResult = "";
-        String result = Task.printTaskDetails(index, taskID);
+    public void testCreateTaskID_2() {
+        System.out.println("createTaskID");
+        String taskName = "Add Task Feature";
+        String developerDetails = "Mike Smith";
+        int taskNumber = 0;
+        String expResult = "AD:0:ITH";
+        String result = Task.createTaskID(taskName, developerDetails, taskNumber);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
+   
     /**
      * Test of returnTotalHours method, of class Task.
      */
     @Test
-    public void testReturnTotalHours() {
+    public void testReturnTotalHours_1() {
         System.out.println("returnTotalHours");
-        float expResult = 0.0F;
+        float expResult = 10F;
         float result = Task.returnTotalHours();
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
+    }
+    @Test
+    public void testReturnTotalHours_2() {
+        System.out.println("returnTotalHours");
+        float expResult = 12F;
+        float result = Task.returnTotalHours();
+        assertEquals(expResult, result, 0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }  
+    @Test
+    public void testReturnTotalHours_3() {
+        System.out.println("returnTotalHours");
+        float expResult = 55F;
+        float result = Task.returnTotalHours();
+        assertEquals(expResult, result, 0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }  
+    
+    @Test
+    public void testReturnTotalHours_4() {
+        System.out.println("returnTotalHours");
+        float expResult = 11F;
+        float result = Task.returnTotalHours();
+        assertEquals(expResult, result, 0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testReturnTotalHours_5() {
+        System.out.println("returnTotalHours");
+        float expResult = 1F;
+        float result = Task.returnTotalHours();
+        assertEquals(expResult, result, 0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+    }
+    
+     @Test
+    public void testReturnTotalHours_totalhours() {
+        System.out.println("returnTotalHours");
+        float expResult = 89F;
+        float result = Task.returnTotalHours();
+        assertEquals(expResult, result, 0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
     }
     
 }
