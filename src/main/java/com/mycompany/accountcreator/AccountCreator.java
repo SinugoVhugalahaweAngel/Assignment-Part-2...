@@ -6,7 +6,7 @@ package com.mycompany.accountcreator;
 //import Scanner
 import java.util.Scanner;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 /**
  *
  * @author RC_Student_lab
@@ -37,7 +37,7 @@ private static Scanner input = new Scanner(System.in);
         
         
          //Create login object
-        Login login = new Login(firstName, lastName); 
+        Login login = new Login(); 
         login.setFirstName(firstName);
         login.setLastName(lastName);
         
@@ -50,7 +50,7 @@ private static Scanner input = new Scanner(System.in);
         String password = sc.nextLine();
         
          // Register the user using the provided username and password
-        String registrationMessage = login.registerUser(userName, password);
+        String registrationMessage = login.registerUser(userName, password,lastName,firstName);
         System.out.println(registrationMessage);
         
         
@@ -67,15 +67,18 @@ private static Scanner input = new Scanner(System.in);
     
          boolean loginSuccess = login.loginUser(loginUserName, loginPassword);
          
-           String loginMessage = login.returnLoginStatus(loginSuccess);
+           String loginMessage = login.returnLoginStatus(loginSuccess,firstName,lastName);
            System.out.println(loginMessage);
+           
+            JDialog dialog = new JDialog();
+           dialog.setAlwaysOnTop(true);
 
          if (login.loginUser(loginUserName, loginPassword)) {
-                JOptionPane.showMessageDialog(null, "Welcome to EasyKanban");
+                JOptionPane.showMessageDialog(dialog, "Welcome to EasyKanban");
    }
          boolean quit = false;
                 while (!quit) {
-                    String statusInput = JOptionPane.showInputDialog(null, "1. Add Tasks\n2. Show Report\n3. Exit");
+                    String statusInput = JOptionPane.showInputDialog(dialog, "1. Add Tasks\n2. Show Report\n3. Exit");
 
                     int statusChoice = Integer.parseInt(statusInput);
                     switch (statusChoice) {
@@ -84,16 +87,16 @@ private static Scanner input = new Scanner(System.in);
                             break;
 
                         case 2: // Show report
-                            JOptionPane.showMessageDialog(null, "Coming Soon");
+                            JOptionPane.showMessageDialog(dialog, "Coming Soon");
                             break;
 
                         case 3: // Quit
                             quit = true;
-                            JOptionPane.showMessageDialog(null, "Exiting EasyKanban.");
+                            JOptionPane.showMessageDialog(dialog, "Exiting EasyKanban.");
                             break;
 
                         default:
-                            JOptionPane.showMessageDialog(null, "Invalid option. Please try again.");
+                            JOptionPane.showMessageDialog(dialog, "Invalid option. Please try again.");
                     }
                 }
     }
