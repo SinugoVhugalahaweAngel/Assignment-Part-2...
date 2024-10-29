@@ -90,10 +90,20 @@ public class TaskTest {
     @Test
     public void testCheckTaskDescription_Invalid() {
         System.out.println("checkTaskDescription");
+        
+        // Define an invalid task description that exceeds 50 characters
         String description = "Create login to authenticate users in the login classs ";
+        
+        // Define the expected result as 'false' since the description is too long
         boolean expResult =false;
+        
+        // Call the checkTaskDescription method to validate the task description length
         boolean result = Task.checkTaskDescription(description);
+        
+        // Assert that the method's actual output matches the expected result
         assertEquals(expResult, result);
+        
+        // Print a message if the description fails validation due to excessive length
         System.out.print("Please enter a task description of less than 50 characters");
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
