@@ -3,23 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.accountcreator;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 /**
  *
  * @author RC_Student_lab
  */
 public class Task {
-    public static String[] taskName;
-    public static int[] taskNumber;
-    public static String[] taskDescription;
-    public static String[] developerDetails;
-    public static float[] taskDuration;
-    public static String[] taskID;
-    public static String[] menu;
-    public static float totalHours = 0;
-    public static int tasks = 0;
+    private static String[] taskName;
+    private  static int[] taskNumber;
+    private  static String[] taskDescription;
+    private  static String[] developerDetails;
+    private  static float[] taskDuration;
+    private  static String[] taskID;
+    private  static String[] menu;
+    private  static float totalHours = 0;
+    private  static int tasks = 0;
+    
     
      public static void addTasks() {
+        
         // Ask how many tasks to enter using JOptionPane
         tasks = Integer.parseInt(JOptionPane.showInputDialog(null, "How many tasks would you like to enter?"));
 
@@ -38,7 +40,7 @@ public class Task {
             // Input task description with validation
              while (true) {
             String description = JOptionPane.showInputDialog("Enter Task Description (max 50 characters):");
-            if (checkTaskDescription(description)) {
+            if (checkTaskDescription(description)) { 
                 taskDescription[i] = description;
                 // Show success message when description is valid
                 JOptionPane.showMessageDialog(null, "Task description is successful.");
@@ -55,7 +57,7 @@ public class Task {
             totalHours += taskDuration[i];
 
             // Assign a unique task number and generate task ID
-            taskNumber[i] = i + 1;
+            taskNumber[i] = i;
             taskID[i] = createTaskID(taskName[i], developerDetails[i], taskNumber[i]);
 
             // Get task status
@@ -130,7 +132,7 @@ public class Task {
 
  while (!validInput) {
 
-            String input = JOptionPane.showInputDialog(null, "Enter the length of the task in hours (Example 1.5 = 1 and a half hours):");
+            String input = JOptionPane.showInputDialog(null, "Enter the length of the task in hours :");
             duration = Float.parseFloat(input);
             validInput = true;
 
