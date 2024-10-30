@@ -5,7 +5,7 @@
 package com.mycompany.accountcreator;
 //import Scanner
 import java.util.Scanner;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import javax.swing.*;
 /**
  *
@@ -14,10 +14,10 @@ import javax.swing.*;
 public class AccountCreator {
     
     // List to store tasks
-private static ArrayList<Task> tasks = new ArrayList<>();
+//private static ArrayList<Task> tasks = new ArrayList<>();
 
 // Scanner object for user input
-private static Scanner input = new Scanner(System.in);
+//private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
         
