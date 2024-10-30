@@ -125,8 +125,18 @@ public class TaskTest {
     @Test
     public void testReturnTotalHours_1() {
         System.out.println("returnTotalHours"); 
+        double [] durations1 = {8,10};
+        // Define the expected total hour for this test case1
+        double expResults = 18;
+        
+    // Call the returnTotalHours method to get the actual total hours
+        double results = Task.returnTotalHours(durations1);
+        
+    // Assert that the actual total hours match the expected total hours   
+        assertEquals(expResults, results, 0);
+        
         double[] durations = {10,12,55,11,1};
-    // Define the expected total hours (10 hours) for this test case
+    // Define the expected total hours  for this test case2
         double expResult = 89;
         
     // Call the returnTotalHours method to get the actual total hours
