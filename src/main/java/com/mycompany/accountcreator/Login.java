@@ -18,13 +18,7 @@ public class Login {
     private String lastName;
     private String password; 
     
-    
-    // Constructor to initialize username and password
-    public Login(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
-    }
-
+   
     // Getters and Setters for userName
     public String getUserName() {
         return userName;
@@ -62,7 +56,7 @@ public class Login {
     }
     
     // This Method ensures that any username contains an under score(_) and length is no more than 5
-    public boolean checkUserName(String username) {
+    public  boolean checkUserName(String username) {
         // Ensure the username contains an underscore and is no more than 5 characters
         return username.length() <= 5 && username.contains("_");
     }
@@ -96,7 +90,7 @@ public class Login {
      /* This method returns the necessary registreation messading indicating if the username is incorrectly formatted,The password does not meet complexity requrements
     The two abvve conditions have been and user has been registered successfully
     */
-    public String registerUser(String username, String password) {
+    public String registerUser(String username, String password,String lastName ,String firstName) {
         if (!checkUserName(username)) {
             return "Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.";
         } else if (!checkPasswordComplexity(password)) {
@@ -104,6 +98,9 @@ public class Login {
         } else {
             this.userName = username;
             this.password = password;
+            this.lastName = lastName;
+            this.firstName = firstName;
+            
             return "User successfully registered.";
         }
     }
@@ -114,9 +111,9 @@ public class Login {
     }
     
     // This method returns the necessary messaging for :A successful log in ,A Failed log in 
-    public String returnLoginStatus(boolean loginSuccess) {
+    public String returnLoginStatus(boolean loginSuccess,String firstName,String lastName) {
         if (loginSuccess) {
-            return "Welcome " + this.firstName + " " + this.lastName + ", it is great to see you again.";
+            return "Welcome " + firstName + " " + lastName + ", it is great to see you again.";
         } else {
             return "Username or password incorrect, please try again.";
         }
