@@ -3,25 +3,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.accountcreator;
+
 import javax.swing.*;
+
 /**
  *
  * @author RC_Student_lab
  */
 public class Task {
+
     private static String[] taskName;
-    private  static int[] taskNumber;
-    private  static String[] taskDescription;
-    private  static String[] developerDetails;
-    private  static float[] taskDuration;
-    private  static String[] taskID;
-    private  static String[] menu;
-    private  static float totalHours = 0;
-    private  static int tasks = 0;
-    
-    
-     public static void addTasks() {
-        
+    private static int[] taskNumber;
+    private static String[] taskDescription;
+    private static String[] developerDetails;
+    private static double[] taskDuration;
+    private static String[] taskID;
+    private static String[] menu;
+    private static int tasks = 0;
+
+    public static void addTasks() {
+        double totalHours=0;
         // Ask how many tasks to enter using JOptionPane
         tasks = Integer.parseInt(JOptionPane.showInputDialog(null, "How many tasks would you like to enter?"));
 
@@ -31,25 +32,25 @@ public class Task {
         taskName = new String[tasks];
         developerDetails = new String[tasks];
         taskNumber = new int[tasks];
-        taskDuration = new float[tasks];
-        
+        taskDuration = new double[tasks];
+
         for (int i = 0; i < tasks; i++) {
             // Input task name using JOptionPane
             taskName[i] = JOptionPane.showInputDialog(null, "Enter Task Name:");
 
             // Input task description with validation
-             while (true) {
-            String description = JOptionPane.showInputDialog("Enter Task Description (max 50 characters):");
-            if (checkTaskDescription(description)) { 
-                taskDescription[i] = description;
-                // Show success message when description is valid
-                JOptionPane.showMessageDialog(null, "Task description is successful.");
-                break;
-            } else {
-                JOptionPane.showMessageDialog(null, "Invalid task description. Please try again.");
+            while (true) {
+                String description = JOptionPane.showInputDialog("Enter Task Description (max 50 characters):");
+                if (checkTaskDescription(description)) {
+                    taskDescription[i] = description;
+                    // Show success message when description is valid
+                    JOptionPane.showMessageDialog(null, "Task description is successful.");
+                    break;
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid task description. Please try again.");
+                }
             }
-        }
-          // Input developer details using JOptionPane
+            // Input developer details using JOptionPane
             developerDetails[i] = JOptionPane.showInputDialog(null, "Enter Developer Details (First and Last Name):");
 
             // Input task duration using JOptionPane
@@ -67,12 +68,12 @@ public class Task {
             JOptionPane.showMessageDialog(null, "Task Details:\n" + printTaskDetails(i, taskID[i]));
         }
     }
-     
-     /**
- * Prompts the user to select a task status and returns the selected status.
- * Valid options are "To Do", "Doing", and "Done".
- */
-        public static String taskStatus() {
+
+    /**
+     * Prompts the user to select a task status and returns the selected status.
+     * Valid options are "To Do", "Doing", and "Done".
+     */
+    public static String taskStatus() {
         String status = "";
         boolean validInput = false;
 
@@ -100,21 +101,21 @@ public class Task {
 
         return status;
     }
-        
-        //This Method ensures that the task description is not more than 50 Characters
-        public static boolean checkTaskDescription(String description) {
+
+    //This Method ensures that the task description is not more than 50 Characters
+    public static boolean checkTaskDescription(String description) {
         return description.length() <= 50;
     }
-        
-        //This Method creates and returns the taskID
-        public static String createTaskID(String taskName, String developerDetails, int taskNumber) {
+
+    //This Method creates and returns the taskID
+    public static String createTaskID(String taskName, String developerDetails, int taskNumber) {
         String taskInitials = taskName.length() >= 2 ? taskName.substring(0, 2).toUpperCase() : taskName.toUpperCase();
         String devSuffix = developerDetails.length() >= 3 ? developerDetails.substring(developerDetails.length() - 3).toUpperCase() : developerDetails.toUpperCase();
         return taskInitials + ":" + taskNumber + ":" + devSuffix;
     }
-        
-        //This method returns the task full tasks details of each task
-        public static String printTaskDetails(int index, String taskID) {
+
+    //This method returns the task full tasks details of each task
+    public static String printTaskDetails(int index, String taskID) {
         return "Task Status: " + menu[index] + "\n"
                 + "Developer Details: " + developerDetails[index] + "\n"
                 + "Task Number: " + taskNumber[index] + "\n"
@@ -124,21 +125,18 @@ public class Task {
                 + "Task Duration: " + taskDuration[index] + " hours";
     }
 
-        
     //This Method returns the total combined hours of all entered task
-    public static float returnTotalHours() {
+    public static double returnTotalHours() {
         boolean validInput = false;
-        float duration = 0;
+        double duration = 0;
 
- while (!validInput) {
+        while (!validInput) {
 
             String input = JOptionPane.showInputDialog(null, "Enter the length of the task in hours :");
-            duration = Float.parseFloat(input);
+            duration = Double.parseDouble(input);
             validInput = true;
 
         }
         return duration;
     }
 }
-     
-

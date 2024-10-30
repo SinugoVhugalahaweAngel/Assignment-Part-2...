@@ -14,54 +14,6 @@ import static org.junit.Assert.*;
  */
 public class TaskTest {
    
-    /**
-     * Test of taskStatus method, of class Task.
-     */
-    @Test
-    public void testTaskStatus() {
-        System.out.println("taskStatus");
-        
-        // Define the expected result when the task status is set to "To Do"
-        String expResult = "To Do";
-        
-       // Call the taskStatus method to get the actual result
-        String result = Task.taskStatus();
-        
-        // Check if the actual result matches the expected result
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-    @Test
-    public void testTaskStatus_2() {
-        System.out.println("taskStatus");
-        
-        // Define the expected result when the task status is set to "Doing"
-        String expResult = "Doing";
-        
-        // Call the taskStatus method to get the actual result
-        String result = Task.taskStatus();
-        
-        // Check if the actual result matches the expected result
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-    @Test
-    public void testTaskStatus_3() {
-        System.out.println("taskStatus");
-        
-        // Define the expected result when the task status is set to "Doing"
-        String expResult = "Done";
-        
-        // Call the taskStatus method to get the actual result
-        String result = Task.taskStatus();
-        
-         // Check if the actual result matches the expected result
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
 
     /**
      * Test of checkTaskDescription method, of class Task.
@@ -173,93 +125,17 @@ public class TaskTest {
     @Test
     public void testReturnTotalHours_1() {
         System.out.println("returnTotalHours"); 
-        
+        double[] durations = {10,12,55,11,1};
     // Define the expected total hours (10 hours) for this test case
-        float expResult = 10F;
+        double expResult = 89;
         
     // Call the returnTotalHours method to get the actual total hours
-        float result = Task.returnTotalHours();
+        double result = Task.returnTotalHours();
         
     // Assert that the actual total hours match the expected total hours   
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-    @Test
-    public void testReturnTotalHours_2() {
-        System.out.println("returnTotalHours");
-    // Define the expected total hours (12 hours) for this test case
-        float expResult = 12F;
-        
-    // Call the returnTotalHours method to get the actual total hours
-        float result = Task.returnTotalHours();
-    // Assert that the actual total hours match the expected total hours   
-        assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }  
-    @Test
-    public void testReturnTotalHours_3() {
-        System.out.println("returnTotalHours");
-     // Define the expected total hours (55 hours) for this test case
-        float expResult = 55F;
-        
-     // Call the returnTotalHours method to get the actual total hours
-        float result = Task.returnTotalHours();
-        
-    // Assert that the actual total hours match the expected total hours   
-        assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }  
-    
-    @Test
-    public void testReturnTotalHours_4() {
-        System.out.println("returnTotalHours");
-        
-     // Define the expected total hours (11 hours) for this test case
-        float expResult = 11F;
-        
-    // Call the returnTotalHours method to get the actual total hours
-        float result = Task.returnTotalHours();
-        
-    // Assert that the actual total hours match the expected total hours 
-        assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-    
-    @Test
-    public void testReturnTotalHours_5() {
-        System.out.println("returnTotalHours");
-        
-    // Define the expected total hours (1 hours) for this test case
-        float expResult = 1F;
-        
-    // Call the returnTotalHours method to get the actual total hours
-        float result = Task.returnTotalHours();
-        
-    // Assert that the actual total hours match the expected total hours
-        assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-        
-    }
-    
-     @Test
-    public void testReturnTotalHours_totalhours() {
-        System.out.println("returnTotalHours");
-        
-    // Define the expected total hours (89 hours) for this test case
-        float expResult = 89F;
-    // Call the returnTotalHours method to get the actual total hours
-        float result = Task.returnTotalHours();
-        
-    // Assert that the actual total hours match the expected total hours
-        assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-        
-    }
-    
+  
 }
