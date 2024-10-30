@@ -54,8 +54,8 @@ public class Task {
             developerDetails[i] = JOptionPane.showInputDialog(null, "Enter Developer Details (First and Last Name):");
 
             // Input task duration using JOptionPane
-            taskDuration[i] = returnTotalHours();
-            totalHours += taskDuration[i];
+            taskDuration[i] = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter the length of the task in hours :"));
+            totalHours =  returnTotalHours(taskDuration);
 
             // Assign a unique task number and generate task ID
             taskNumber[i] = i;
@@ -63,9 +63,11 @@ public class Task {
 
             // Get task status
             menu[i] = taskStatus();
+            
 
             // Display task details
             JOptionPane.showMessageDialog(null, "Task Details:\n" + printTaskDetails(i, taskID[i]));
+            JOptionPane.showMessageDialog(null, "TotalHours:\n" +totalHours);
         }
     }
 
@@ -126,17 +128,13 @@ public class Task {
     }
 
     //This Method returns the total combined hours of all entered task
-    public static double returnTotalHours() {
-        boolean validInput = false;
-        double duration = 0;
+    public static double returnTotalHours(double [] durations) {
+        
+        double hours = 0;
 
-        while (!validInput) {
-
-            String input = JOptionPane.showInputDialog(null, "Enter the length of the task in hours :");
-            duration = Double.parseDouble(input);
-            validInput = true;
-
-        }
-        return duration;
+       for(double duration: durations){
+           hours += duration;
+       }
+        return hours;
     }
 }

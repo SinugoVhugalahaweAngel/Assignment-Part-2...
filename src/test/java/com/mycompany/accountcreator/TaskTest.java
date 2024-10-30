@@ -130,7 +130,7 @@ public class TaskTest {
         double expResult = 89;
         
     // Call the returnTotalHours method to get the actual total hours
-        double result = Task.returnTotalHours();
+        double result = Task.returnTotalHours(durations);
         
     // Assert that the actual total hours match the expected total hours   
         assertEquals(expResult, result, 0);
