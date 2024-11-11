@@ -99,6 +99,29 @@ public class Task {
             }
         }
     }
+    
+    // This method displays the task with the longest duration.
+    // If no tasks are available, it shows a message indicating that.
+    
+      public static void displayLongestTask() {
+        if (tasks == 0) {
+            //System.out.println("No tasks available.");
+             JOptionPane.showMessageDialog(null,"No tasks available." );
+            return;
+        }
+
+        int maxIndex = 0;
+        for (int i = 1; i < tasks; i++) {
+            if (durations[i] > durations[maxIndex]) {
+                maxIndex = i;
+            }
+        }
+        
+        //System.out.println("\nTask with the longest duration:");
+        JOptionPane.showMessageDialog(null,"\nTask with the longest duration:" );
+        //System.out.println("Developer: " + developers[maxIndex] + ", Task: " + taskNames[maxIndex] + ", Duration: " + durations[maxIndex]);
+         JOptionPane.showMessageDialog(null,"Developer: " + developers[maxIndex] + ", Task: " + taskNames[maxIndex] + ", Duration: " + durations[maxIndex]);
+    }
     /**
      * Prompts the user to select a task status and returns the selected status.
      * Valid options are "To Do", "Doing", and "Done".
