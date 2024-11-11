@@ -87,7 +87,18 @@ public class Task {
             JOptionPane.showMessageDialog(null, "TotalHours:\n" +totalHours);
         }
     }
-
+    
+     // This method displays all tasks with the status 'Done'.
+    public static void displayDoneTasks() {
+       // System.out.println("\nTasks with status 'Done':");
+        JOptionPane.showMessageDialog(null,"\nTasks with status 'Done':" );
+        for (int i = 0; i < tasks; i++) {
+            if (statuses[i].equalsIgnoreCase("done")) {
+            //System.out.println("Developer: " + developers[i] + ", Task: " + taskNames[i] + ", Duration: " + durations[i]);
+             JOptionPane.showMessageDialog(null,"Developer: " + developers[i] + ", Task: " + taskNames[i] + ", Duration: " + durations[i] );
+            }
+        }
+    }
     /**
      * Prompts the user to select a task status and returns the selected status.
      * Valid options are "To Do", "Doing", and "Done".
