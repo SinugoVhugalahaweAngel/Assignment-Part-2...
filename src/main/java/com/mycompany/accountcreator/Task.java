@@ -21,6 +21,23 @@ public class Task {
     private static String[] menu;
     private static int tasks = 0;
 
+       
+    // Arrays to store specific information for easy access
+    private static String[] developers; // Developers assigned to tasks
+    private static String[] taskNames;  // Names of the tasks
+    private static String[] taskIds;    // IDs of the tasks
+    private static double[] durations;  // Durations of the tasks
+    private static String[] statuses;   // Statuses of the tasks
+    
+    public Task() {
+        // Initialize arrays when the object is created
+        developers = new String[100];
+        taskNames = new String[100];
+        taskIds = new String[100];
+        durations = new double[100];
+        statuses = new String[100];
+    }
+    
     public static void addTasks() {
         double totalHours=0;
         // Ask how many tasks to enter using JOptionPane
