@@ -117,11 +117,25 @@ public class Task {
             }
         }
         
-        //System.out.println("\nTask with the longest duration:");
+       
         JOptionPane.showMessageDialog(null,"\nTask with the longest duration:" );
-        //System.out.println("Developer: " + developers[maxIndex] + ", Task: " + taskNames[maxIndex] + ", Duration: " + durations[maxIndex]);
          JOptionPane.showMessageDialog(null,"Developer: " + developers[maxIndex] + ", Task: " + taskNames[maxIndex] + ", Duration: " + durations[maxIndex]);
     }
+    
+      public static void searchTaskByName(String searchName) {
+        for (int i = 0; i < tasks; i++) {
+            if (taskNames[i].equalsIgnoreCase(searchName)) {
+                //System.out.println("\nTask '" + searchName + "' Details:");
+                 JOptionPane.showMessageDialog(null, "\nTask '" + searchName + "' Details:");
+               // System.out.println("Developer: " + developers[i] + ", Status: " + statuses[i]);
+                JOptionPane.showMessageDialog(null,"Developer: " + developers[i] + ", Status: " + statuses[i] );
+                return;
+            }
+        }
+        //System.out.println("Task '" + searchName + "' not found.");
+         JOptionPane.showMessageDialog(null, "Task '" + searchName + "' not found.");
+    }
+      
     /**
      * Prompts the user to select a task status and returns the selected status.
      * Valid options are "To Do", "Doing", and "Done".
