@@ -152,6 +152,33 @@ public class Task {
     }
       
     /**
+    
+     * This method deletes a task by its name from the task list.
+     * It iterates through the list of tasks to find the specified task name.
+     * If the task is found, it shifts the subsequent task details up by one index to remove the task.
+     * The total number of tasks is then decremented.
+     * If the task is not found, a message is displayed indicating that the task was not found.
+  
+ */
+       
+   public static void deleteTaskByName(String deleteTaskName) {
+        for (int i = 0; i < tasks; i++) {
+            if (taskNames[i].equalsIgnoreCase(deleteTaskName)) {
+                for (int j = i; j < tasks - 1; j++) {
+                    developers[j] = developers[j + 1];
+                    taskNames[j] = taskNames[j + 1];
+                    taskIds[j] = taskIds[j + 1];
+                    durations[j] = durations[j + 1];
+                    statuses[j] = statuses[j + 1];
+                }
+                tasks--;
+                JOptionPane.showMessageDialog(null,"Task '" + deleteTaskName + "' deleted successfully.");
+                return;
+            }
+        }
+       JOptionPane.showMessageDialog(null,"Task '" + deleteTaskName + "' not found.");
+    }
+    /**
      * Prompts the user to select a task status and returns the selected status.
      * Valid options are "To Do", "Doing", and "Done".
      */
