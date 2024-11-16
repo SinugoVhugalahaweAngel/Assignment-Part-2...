@@ -178,6 +178,27 @@ public class Task {
         }
        JOptionPane.showMessageDialog(null,"Task '" + deleteTaskName + "' not found.");
     }
+   
+   /**
+     * This method displays a full report of all tasks currently in the system.
+     * It checks if there are any tasks available; if none exist, it prints a message indicating this.
+     * If tasks are present, it iterates through each task and displays the task details
+     * including Task ID, Task Name, Developer, Duration, and Status using dialog boxes.
+    */
+    public static void displayReport() {
+      
+       JOptionPane.showMessageDialog(null,"\nFull Task Report:");
+        if (tasks == 0) {
+            System.out.println("No tasks available.");
+            return;
+        }
+        for (int i = 0; i < tasks; i++) {
+       JOptionPane.showMessageDialog(null,"Task ID: " + taskIds[i] + ", Task Name: " + taskNames[i] +
+                               ", Developer: " + developers[i] + ", Duration: " + durations[i] +
+                               ", Status: " + statuses[i]);
+
+        }
+    }
     /**
      * Prompts the user to select a task status and returns the selected status.
      * Valid options are "To Do", "Doing", and "Done".
