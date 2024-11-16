@@ -90,11 +90,9 @@ public class Task {
     
      // This method displays all tasks with the status 'Done'.
     public static void displayDoneTasks() {
-       // System.out.println("\nTasks with status 'Done':");
         JOptionPane.showMessageDialog(null,"\nTasks with status 'Done':" );
         for (int i = 0; i < tasks; i++) {
             if (statuses[i].equalsIgnoreCase("done")) {
-            //System.out.println("Developer: " + developers[i] + ", Task: " + taskNames[i] + ", Duration: " + durations[i]);
              JOptionPane.showMessageDialog(null,"Developer: " + developers[i] + ", Task: " + taskNames[i] + ", Duration: " + durations[i] );
             }
         }
@@ -105,7 +103,6 @@ public class Task {
     
       public static void displayLongestTask() {
         if (tasks == 0) {
-            //System.out.println("No tasks available.");
              JOptionPane.showMessageDialog(null,"No tasks available." );
             return;
         }
@@ -116,24 +113,42 @@ public class Task {
                 maxIndex = i;
             }
         }
-        
-       
+      
         JOptionPane.showMessageDialog(null,"\nTask with the longest duration:" );
-         JOptionPane.showMessageDialog(null,"Developer: " + developers[maxIndex] + ", Task: " + taskNames[maxIndex] + ", Duration: " + durations[maxIndex]);
+        JOptionPane.showMessageDialog(null,"Developer: " + developers[maxIndex] + ", Task: " + taskNames[maxIndex] + ", Duration: " + durations[maxIndex]);
     }
     
       public static void searchTaskByName(String searchName) {
         for (int i = 0; i < tasks; i++) {
             if (taskNames[i].equalsIgnoreCase(searchName)) {
-                //System.out.println("\nTask '" + searchName + "' Details:");
                  JOptionPane.showMessageDialog(null, "\nTask '" + searchName + "' Details:");
-               // System.out.println("Developer: " + developers[i] + ", Status: " + statuses[i]);
                 JOptionPane.showMessageDialog(null,"Developer: " + developers[i] + ", Status: " + statuses[i] );
                 return;
             }
         }
-        //System.out.println("Task '" + searchName + "' not found.");
+    
          JOptionPane.showMessageDialog(null, "Task '" + searchName + "' not found.");
+    }
+      
+      /**
+      * This method searches for tasks assigned to a specific developer and displays the details.
+      * It uses a loop to go through the list of tasks and checks if the developer's name matches
+      * the input parameter. If tasks are found, they are displayed using a dialog box.
+      * If no tasks are found for the specified developer, an appropriate message is shown.
+      *  developerName The name of the developer for whom tasks are being searched.
+       */
+       public static void searchTasksByDeveloper(String developerName) {
+       JOptionPane.showMessageDialog(null, "\nTasks assigned to " + developerName + ":");
+        boolean found = false;
+        for (int i = 0; i < tasks; i++) {
+            if (developers[i].equalsIgnoreCase(developerName)) {
+             JOptionPane.showMessageDialog(null,"Task: " + taskNames[i] + ", Status: " + statuses[i] );
+             found = true;
+            }
+        }
+        if (!found) {
+            JOptionPane.showMessageDialog(null,"No tasks found for this developer.");
+        }
     }
       
     /**
