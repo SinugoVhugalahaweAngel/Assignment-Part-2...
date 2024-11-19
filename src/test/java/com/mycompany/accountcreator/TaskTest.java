@@ -167,10 +167,9 @@ public class TaskTest {
      */
     @Test
     public void testDeleteTaskByName() {
-        System.out.println("deleteTaskByName");
-         Task task = new Task();
+       Task task = new Task();
 
-    // Mock data setup
+    
     Task.setTasks(4); // Total number of tasks
     Task.setStatuses(new String[]{"To Do", "Doing", "Done", "To Do"});
     Task.setDevelopers(new String[]{"Mike Smith", "Edward Harrison", "Samantha Paulson", "Glender Obeholzer"});
@@ -190,9 +189,9 @@ public class TaskTest {
     assertEquals("Add Arrays", Task.getTaskNames()[taskIndexToDelete]);
     assertEquals("Glender Obeholzer", Task.getDevelopers()[taskIndexToDelete]);
     assertEquals("To Do", Task.getStatuses()[taskIndexToDelete]);
-    assertEquals(11, Task.getDurations()[taskIndexToDelete], 0.01);
+    assertEquals(11, Task.getDurations()[taskIndexToDelete], 0.01); 
         
-        // TODO review the generated test code and remove the default call to fail.
+       // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
 
