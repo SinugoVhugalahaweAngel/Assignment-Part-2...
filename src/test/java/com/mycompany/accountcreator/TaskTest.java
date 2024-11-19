@@ -61,12 +61,8 @@ public class TaskTest {
     // Validate durations
     assertEquals(8, durations[0], 0.001); // Allow a small delta for floating-point comparison
     assertEquals(10, durations[1], 0.001);
-        
-
-        
-        
-        
-        // TODO review the generated test code and remove the default call to fail.
+ 
+      // TODO review the generated test code and remove the default call to fail.
      //   fail("The test case is a prototype.");
     }
 
@@ -95,9 +91,7 @@ public class TaskTest {
     assertEquals("Glender Obeholzer", Task.getDevelopers()[maxIndex]); // Validate developer name
     assertEquals("Add Arrays", Task.getTaskNames()[maxIndex]);        // Validate task name
     assertEquals(11, Task.getDurations()[maxIndex], 0.001); 
-        
-
-        
+ 
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -107,8 +101,7 @@ public class TaskTest {
      */
     @Test
     public void testSearchTaskByName() {
-        System.out.println("searchTaskByName");
-        // Initialize a Task instance and set values using setters
+       // Initialize a Task instance and set values using setters
     Task task = new Task();
        // Set up the tasks
     Task.setTasks(4); // Total tasks
@@ -128,8 +121,10 @@ public class TaskTest {
     String expectedOutput = "Developer: Mike Smith, Status: To Do";
     String actualOutput = "Developer: " + Task.getDevelopers()[taskIndex] + ", Status: " + Task.getStatuses()[taskIndex];
 
-    // Assertions
-    assertEquals(expectedOutput, actualOutput); // Validate the r
+    //Assertions
+    assertEquals(expectedOutput, actualOutput);
+       
+        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
