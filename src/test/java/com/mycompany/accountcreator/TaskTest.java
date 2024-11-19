@@ -201,20 +201,27 @@ public class TaskTest {
      */
     @Test
     public void testCheckTaskDescription() {
-        System.out.println("checkTaskDescription");
-       // Initialize the Task instance
+      // Initialize the Task instance
     Task task = new Task();
 
     // Test case 1: Description with fewer than 50 characters (Valid)
     String shortDescription = "Create login to authenticate users";
-    assertEquals(Task.checkTaskDescription(shortDescription),
-        "Task description should be valid with fewer than 50 characters.");
+    assertEquals("Task description is valid.", Task.checkTaskDescription(shortDescription));
 
     // Test case 2: Description with exactly 50 characters (Valid)
     String exactDescription = "This description contains exactly fifty characters!!!";
-    assertEquals(Task.checkTaskDescription(exactDescription),
-        "Task description should be valid with exactly 50 characters.");
-        // TODO review the generated test code and remove the default call to fail.
+    assertEquals("Task description is valid.", Task.checkTaskDescription(exactDescription));
+
+    // Test case 3: Description with more than 50 characters (Invalid)
+    String longDescription = "This description is longer than fifty characters and should be considered invalid.";
+    assertEquals("Task description is too long.", Task.checkTaskDescription(longDescription));
+
+    
+    
+    
+    
+    
+       // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
     }
 
@@ -223,8 +230,7 @@ public class TaskTest {
      */
     @Test
     public void testCreateTaskID() {
-        System.out.println("createTaskID");
-       // Instantiate Task class
+     // Instantiate Task class
     Task task = new Task();
     
     // Set the task data using setters
@@ -238,7 +244,9 @@ public class TaskTest {
 
     // Test Case 2
     String taskID2 = task.createTaskID(task.getTaskNames()[1], task.getDevelopers()[1], task.getTaskNumber()[1]);
-    assertEquals("AD:2:ITH", taskID2);
+    assertEquals("AD:2:ITH", taskID2);   
+    
+        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
