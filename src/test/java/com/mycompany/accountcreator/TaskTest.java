@@ -257,8 +257,7 @@ public class TaskTest {
      */
     @Test
     public void testReturnTotalHours() {
-        System.out.println("returnTotalHours");
-         // Test Data: 5 tasks with the provided durations
+     // Test Data: 5 tasks with the provided durations
     double[] testDurations = {10.0, 12.0, 55.0, 11.0, 1.0};
     
     // Calculate total hours using the Task method
@@ -270,8 +269,9 @@ public class TaskTest {
     // Additional test case for a specific condition (e.g., summing only a subset)
     // Assuming we only want to test the first few tasks or a specific condition here, such as the first 3 tasks
     double partialTotal = Task.returnTotalHours(new double[]{10.0, 12.0, 55.0});
-    assertEquals(77.0, partialTotal, 0.01);  // 10 + 12 + 55 = 77.0
-        // TODO review the generated test code and remove the default call to fail.
+    assertEquals(77.0, partialTotal, 0.01);  // 10 + 12 + 55 = 77.0    
+       
+    // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
     
