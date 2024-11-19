@@ -134,10 +134,9 @@ public class TaskTest {
      */
     @Test
     public void testSearchTasksByDeveloper() {
-        System.out.println("searchTasksByDeveloper");
-        Task task = new Task();
+     Task task = new Task();
 
-    // Set up mock data
+    
     Task.setTasks(4); // Total tasks
     Task.setStatuses(new String[]{"To Do", "Doing", "Done", "To Do"});
     Task.setDevelopers(new String[]{"Mike Smith", "Edward Harrison", "Samantha Paulson", "Glender Obeholzer"});
@@ -156,7 +155,8 @@ public class TaskTest {
     String actualTask = Task.getTaskNames()[developerIndex] + ", " + Task.getStatuses()[developerIndex];
 
     // Assertions
-    assertEquals(expectedTask, actualTask);
+    assertEquals(expectedTask, actualTask);  
+     
         
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
