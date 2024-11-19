@@ -22,8 +22,7 @@ public class TaskTest {
      */
     @Test
     public void testAddTasks() {
-       
-   Task task = new Task();  // Instantiate Task class
+    Task task = new Task();  // Instantiate Task class
  
    // Manually simulate adding tasks using setters
     Task.setTaskNames(new String[2]);    // Initialize arrays
@@ -37,8 +36,8 @@ public class TaskTest {
     double[] durations = Task.getDurations();
     String[] statuses = Task.getStatuses();
     String[] taskIds = Task.getTaskIds();
-
-    // Set values for the first task
+    
+  // Set values for the first task
     taskNames[0] = "Login Feature";
     developers[0] = "Robyn Harrison";
     durations[0] = 8;
@@ -62,6 +61,10 @@ public class TaskTest {
     // Validate durations
     assertEquals(8, durations[0], 0.001); // Allow a small delta for floating-point comparison
     assertEquals(10, durations[1], 0.001);
+        
+
+        
+        
         
         // TODO review the generated test code and remove the default call to fail.
      //   fail("The test case is a prototype.");
