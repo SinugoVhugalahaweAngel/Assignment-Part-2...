@@ -204,23 +204,33 @@ public class TaskTest {
       // Initialize the Task instance
     Task task = new Task();
 
-    // Test case 1: Description with fewer than 50 characters (Valid)
-    String shortDescription = "Create login to authenticate users";
-    assertEquals("Task description is valid.", Task.checkTaskDescription(shortDescription));
+     String description1 = "Create login to authenticate users";
+        
+        // Define the expected result as 'true' since the description is valid
+        boolean expResult1 = true;
+        
+        // Call the checkTaskDescription method to validate the task description length
+        boolean result1 = Task.checkTaskDescription(description1);
+        
+        // Assert that the method's actual output matches the expected result
+        assertEquals(expResult1, result1);
+        
+        // Define an invalid task description that exceeds 50 characters
+        String description2 = "Create login to authenticate users in the login classs ";
+        
+        // Define the expected result as 'false' since the description is too long
+        boolean expResult2 = false;
+        // Call the checkTaskDescription method to validate the task description length
+        boolean result2 = Task.checkTaskDescription(description2);
+        
+        // Assert that the method's actual output matches the expected result
+        assertEquals(expResult2, result2);
+    
+    
+    
+    
+            
 
-    // Test case 2: Description with exactly 50 characters (Valid)
-    String exactDescription = "This description contains exactly fifty characters!!!";
-    assertEquals("Task description is valid.", Task.checkTaskDescription(exactDescription));
-
-    // Test case 3: Description with more than 50 characters (Invalid)
-    String longDescription = "This description is longer than fifty characters and should be considered invalid.";
-    assertEquals("Task description is too long.", Task.checkTaskDescription(longDescription));
-
-    
-    
-    
-    
-    
        // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
     }
