@@ -76,8 +76,7 @@ public class TaskTest {
      */
     @Test
     public void testDisplayLongestTask() {
-        System.out.println("displayLongestTask");
-    // Initialize a Task instance and set values using setters
+      // Initialize a Task instance and set values using setters
     Task task = new Task();
 
     // Set up the tasks
@@ -95,7 +94,10 @@ public class TaskTest {
     // Assertions to validate the output
     assertEquals("Glender Obeholzer", Task.getDevelopers()[maxIndex]); // Validate developer name
     assertEquals("Add Arrays", Task.getTaskNames()[maxIndex]);        // Validate task name
-    assertEquals(11, Task.getDurations()[maxIndex], 0.001);       
+    assertEquals(11, Task.getDurations()[maxIndex], 0.001); 
+        
+
+        
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
