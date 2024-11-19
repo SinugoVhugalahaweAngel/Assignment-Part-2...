@@ -38,6 +38,106 @@ public class Task {
         statuses = new String[100];
     }
     
+    // Getters and setters that will assits in testing 
+    public static String[] getTaskName() {
+        return taskName;
+    }
+
+    public static void setTaskName(String[] taskName) {
+        Task.taskName = taskName;
+    }
+
+    public static int[] getTaskNumber() {
+        return taskNumber;
+    }
+
+    public static void setTaskNumber(int[] taskNumber) {
+        Task.taskNumber = taskNumber;
+    } 
+    public static String[] getTaskDescription() {
+        return taskDescription;
+    }
+
+    public static void setTaskDescription(String[] taskDescription) {
+        Task.taskDescription = taskDescription;
+    }
+
+    public static String[] getDeveloperDetails() {
+        return developerDetails;
+    }
+
+    public static void setDeveloperDetails(String[] developerDetails) {
+        Task.developerDetails = developerDetails;
+    }
+
+    public static double[] getTaskDuration() {
+        return taskDuration;
+    }
+    
+    public static void setTaskDuration(double[] taskDuration) {
+        Task.taskDuration = taskDuration;
+    }
+
+    public static String[] getTaskID() {
+        return taskID;
+    }
+
+    public static void setTaskID(String[] taskID) {
+        Task.taskID = taskID;
+    }
+ public static String[] getMenu() {
+        return menu;
+    }
+
+    public static void setMenu(String[] menu) {
+        Task.menu = menu;
+    }
+
+    public static int getTasks() {
+        return tasks;
+    }
+
+    public static void setTasks(int tasks) {
+        Task.tasks = tasks;
+    }
+     public static String[] getDevelopers() {
+        return developers;
+    }
+
+    public static void setDevelopers(String[] developers) {
+        Task.developers = developers;
+    }
+
+    public static String[] getTaskNames() {
+        return taskNames;
+    }
+
+    public static void setTaskNames(String[] taskNames) {
+        Task.taskNames = taskNames;
+    }
+    public static String[] getTaskIds() {
+        return taskIds;
+    }
+
+    public static void setTaskIds(String[] taskIds) {
+        Task.taskIds = taskIds;
+    }
+
+    public static double[] getDurations() {
+        return durations;
+    }
+ public static void setDurations(double[] durations) {
+        Task.durations = durations;
+    }
+
+    public static String[] getStatuses() {
+        return statuses;
+    }
+
+    public static void setStatuses(String[] statuses) {
+        Task.statuses = statuses;
+    }
+    
     public static void addTasks() {
         double totalHours=0;
         // Ask how many tasks to enter using JOptionPane
@@ -54,7 +154,7 @@ public class Task {
         for (int i = 0; i < tasks; i++) {
             // Input task name using JOptionPane
             taskName[i] = JOptionPane.showInputDialog(null, "Enter Task Name:");
-
+            taskNames[i] = taskName[i];
             // Input task description with validation
             while (true) {
                 String description = JOptionPane.showInputDialog("Enter Task Description (max 50 characters):");
@@ -69,18 +169,20 @@ public class Task {
             }
             // Input developer details using JOptionPane
             developerDetails[i] = JOptionPane.showInputDialog(null, "Enter Developer Details (First and Last Name):");
-
+            developers[i] = developerDetails[i];
+            
             // Input task duration using JOptionPane
             taskDuration[i] = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter the length of the task in hours :"));
+            durations[i] = taskDuration[i];
             totalHours =  returnTotalHours(taskDuration);
 
             // Assign a unique task number and generate task ID
             taskNumber[i] = i;
             taskID[i] = createTaskID(taskName[i], developerDetails[i], taskNumber[i]);
-
+            taskIds[i] = taskID[i];
             // Get task status
             menu[i] = taskStatus();
-            
+            statuses[i] = menu[i];
 
             // Display task details
             JOptionPane.showMessageDialog(null, "Task Details:\n" + printTaskDetails(i, taskID[i]));
@@ -187,9 +289,10 @@ public class Task {
     */
     public static void displayReport() {
       
+       // System.out.println("\nFull Task Report:");
        JOptionPane.showMessageDialog(null,"\nFull Task Report:");
         if (tasks == 0) {
-            System.out.println("No tasks available.");
+             JOptionPane.showMessageDialog(null,"No tasks available.");
             return;
         }
         for (int i = 0; i < tasks; i++) {
@@ -199,6 +302,8 @@ public class Task {
 
         }
     }
+        
+    
     /**
      * Prompts the user to select a task status and returns the selected status.
      * Valid options are "To Do", "Doing", and "Done".

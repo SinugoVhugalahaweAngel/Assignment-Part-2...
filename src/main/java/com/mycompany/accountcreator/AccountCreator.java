@@ -13,12 +13,6 @@ import javax.swing.*;
  */
 public class AccountCreator {
     
-    // List to store tasks
-//private static ArrayList<Task> tasks = new ArrayList<>();
-
-// Scanner object for user input
-//private static Scanner input = new Scanner(System.in);
-
     public static void main(String[] args) {
         
         //Object for task
@@ -77,31 +71,68 @@ public class AccountCreator {
                 JOptionPane.showMessageDialog(dialog, "Welcome to EasyKanban");
    }
          boolean quit = false;
-                while (!quit) {
-                    String statusInput = JOptionPane.showInputDialog(dialog, "1. Add Tasks\n2. Show Report\n3. Exit");
-
-                    int statusChoice = Integer.parseInt(statusInput);
-                    switch (statusChoice) {
+         while (!quit) {
+         String optionInput = JOptionPane.showInputDialog(dialog,
+                            "1. Add Tasks\n" +
+                            "2. Show Report\n" +
+                            "3. Display Tasks with Status 'Done'\n" +
+                            "4. Display Task with Longest Duration\n" +
+                            "5. Search Task by Name\n" +
+                            "6. Search Tasks by Developer\n" +
+                            "7. Delete Task by Name\n" +
+                            "8. Exit");  
+         
+         
+                    int option = Integer.parseInt(optionInput);
+                    switch (option) {
                         case 1: // Add tasks
-                            tasks.addTasks(); // Assuming addTasks() uses JOptionPane for input/output
+                            tasks.addTasks(); // Add tasks using JOptionPane for input/output
                             break;
 
                         case 2: // Show report
-                            JOptionPane.showMessageDialog(dialog, "Coming Soon");
+                            tasks.displayReport(); // Display full report
                             break;
 
-                        case 3: // Quit
+                        case 3: // Display tasks with status 'done'
+                            tasks.displayDoneTasks();
+                            break;
+
+                        case 4: // Display task with the longest duration
+                            tasks.displayLongestTask();
+                            break;
+                            
+                             case 5: // Search for a task by name
+                            String searchName = JOptionPane.showInputDialog(dialog, "Enter the task name to search:");
+                            tasks.searchTaskByName(searchName);
+                            break;
+
+                        case 6: // Search for tasks assigned to a developer
+                            String developerName = JOptionPane.showInputDialog(dialog, "Enter the developer's name to search:");
+                            tasks.searchTasksByDeveloper(developerName);
+                            break;
+
+                        case 7: // Delete a task by name
+                            String deleteTaskName = JOptionPane.showInputDialog(dialog, "Enter the task name to delete:");
+                            tasks.deleteTaskByName(deleteTaskName);
+                            break;
+
+                        case 8: // Quit
                             quit = true;
                             JOptionPane.showMessageDialog(dialog, "Exiting EasyKanban.");
                             break;
 
                         default:
                             JOptionPane.showMessageDialog(dialog, "Invalid option. Please try again.");
-                    }
+                    
                 }
-    }
+                }
+            }
         }
-}
+    }
+
+
+
+
 
 
 
