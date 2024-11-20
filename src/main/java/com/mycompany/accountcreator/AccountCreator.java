@@ -5,7 +5,6 @@
 package com.mycompany.accountcreator;
 //import Scanner
 import java.util.Scanner;
-//import java.util.ArrayList;
 import javax.swing.*;
 /**
  *

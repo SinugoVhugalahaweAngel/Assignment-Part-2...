@@ -12,6 +12,7 @@ import javax.swing.*;
  */
 public class Task {
 
+   
     private static String[] taskName;
     private static int[] taskNumber;
     private static String[] taskDescription;
@@ -19,24 +20,15 @@ public class Task {
     private static double[] taskDuration;
     private static String[] taskID;
     private static String[] menu;
-    private static int tasks = 0;
+    public static int tasks = 0;
 
-       
     // Arrays to store specific information for easy access
-    private static String[] developers; // Developers assigned to tasks
-    private static String[] taskNames;  // Names of the tasks
-    private static String[] taskIds;    // IDs of the tasks
-    private static double[] durations;  // Durations of the tasks
-    private static String[] statuses;   // Statuses of the tasks
-    
-    public Task() {
-        // Initialize arrays when the object is created
-        developers = new String[100];
-        taskNames = new String[100];
-        taskIds = new String[100];
-        durations = new double[100];
-        statuses = new String[100];
-    }
+    public static String[] developers; // Developers assigned to tasks
+    public static String[] taskNames;  // Names of the tasks
+    public static String[] taskIds;    // IDs of the tasks
+    public static double[] durations;  // Durations of the tasks
+    public static String[] statuses;   // Statuses of the tasks
+
     
     // Getters and setters that will assits in testing 
     public static String[] getTaskName() {
@@ -143,6 +135,8 @@ public class Task {
         // Ask how many tasks to enter using JOptionPane
         tasks = Integer.parseInt(JOptionPane.showInputDialog(null, "How many tasks would you like to enter?"));
 
+        // Initialize all arrays based on the number of tasks
+        
         taskDescription = new String[tasks];
         taskID = new String[tasks];
         menu = new String[tasks];
@@ -150,8 +144,14 @@ public class Task {
         developerDetails = new String[tasks];
         taskNumber = new int[tasks];
         taskDuration = new double[tasks];
+        
+        developers = new String[tasks];
+        taskNames = new String[tasks];
+        taskIds = new String[tasks];
+        durations = new double[tasks];
+        statuses = new String[tasks];
 
-        for (int i = 0; i < tasks; i++) {
+           for (int i = 0; i < tasks; i++) {
             // Input task name using JOptionPane
             taskName[i] = JOptionPane.showInputDialog(null, "Enter Task Name:");
             taskNames[i] = taskName[i];
