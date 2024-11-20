@@ -192,12 +192,19 @@ public class Task {
     
      // This method displays all tasks with the status 'Done'.
     public static void displayDoneTasks() {
+         boolean foundDoneTask = false;
         JOptionPane.showMessageDialog(null,"\nTasks with status 'Done':" );
+        // Loop through all tasks
         for (int i = 0; i < tasks; i++) {
             if (statuses[i].equalsIgnoreCase("done")) {
+            foundDoneTask = true;
              JOptionPane.showMessageDialog(null,"Developer: " + developers[i] + ", Task: " + taskNames[i] + ", Duration: " + durations[i] );
             }
         }
+         // If no "Done" tasks are found, display a message
+    if (!foundDoneTask) {
+        JOptionPane.showMessageDialog(null, "No tasks with status 'Done' found.");
+    }
     }
     
     // This method displays the task with the longest duration.
