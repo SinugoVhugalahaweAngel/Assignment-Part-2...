@@ -175,7 +175,7 @@ public class TaskTest {
     Task.setDevelopers(new String[]{"Mike Smith", "Edward Harrison", "Samantha Paulson", "Glender Obeholzer"});
     Task.setTaskNames(new String[]{"Create login", "Create Add Features", "Create Reports", "Add Arrays"});
     Task.setDurations(new double[]{5, 8, 2, 11});
-
+    Task.setTaskIds(new String[]{"CL001", "CA002", "CR003", "AA004"}); 
     // Task name to delete
     String deleteTaskName = "Create Reports";
     int taskIndexToDelete = 2; // Known index for "Create Reports"
