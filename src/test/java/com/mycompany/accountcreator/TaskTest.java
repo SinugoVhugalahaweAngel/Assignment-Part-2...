@@ -169,13 +169,14 @@ public class TaskTest {
     public void testDeleteTaskByName() {
        Task task = new Task();
 
-    
+    Task.setTaskIds(new String[]{"T1", "T2", "T3", "T4"});
     Task.setTasks(4); // Total number of tasks
     Task.setStatuses(new String[]{"To Do", "Doing", "Done", "To Do"});
     Task.setDevelopers(new String[]{"Mike Smith", "Edward Harrison", "Samantha Paulson", "Glender Obeholzer"});
     Task.setTaskNames(new String[]{"Create login", "Create Add Features", "Create Reports", "Add Arrays"});
     Task.setDurations(new double[]{5, 8, 2, 11});
-    Task.setTaskIds(new String[]{"CL001", "CA002", "CR003", "AA004"}); 
+    
+  
     // Task name to delete
     String deleteTaskName = "Create Reports";
     int taskIndexToDelete = 2; // Known index for "Create Reports"
@@ -186,6 +187,7 @@ public class TaskTest {
     assertEquals(3, Task.getTasks());
 
     // Directly check that the task at the deleted index is replaced correctly
+    assertEquals("T4", Task.getTaskIds()[2]); // Task ID after deletion
     assertEquals("Add Arrays", Task.getTaskNames()[taskIndexToDelete]);
     assertEquals("Glender Obeholzer", Task.getDevelopers()[taskIndexToDelete]);
     assertEquals("To Do", Task.getStatuses()[taskIndexToDelete]);
