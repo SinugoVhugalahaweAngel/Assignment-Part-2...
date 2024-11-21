@@ -189,7 +189,7 @@ public class Task {
             JOptionPane.showMessageDialog(null, "TotalHours:\n" +totalHours);
         }
     }
-    
+    /*****************************************Part 3********************************************************/
      // This method displays all tasks with the status 'Done'.
     public static void displayDoneTasks() {
          boolean foundDoneTask = false;
@@ -310,7 +310,7 @@ public class Task {
         }
     }
         
-    
+    /******************************************End of part 3*************************************************/
     /**
      * Prompts the user to select a task status and returns the selected status.
      * Valid options are "To Do", "Doing", and "Done".

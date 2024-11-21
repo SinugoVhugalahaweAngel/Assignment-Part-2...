@@ -66,7 +66,7 @@ public class TaskTest {
      //   fail("The test case is a prototype.");
     }
 
-
+/***************************************Part 3 testing *******************************************/
     /**
      * Test of displayLongestTask method, of class Task.
      */
@@ -197,7 +197,7 @@ public class TaskTest {
        // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
-
+/*************************************End of part 3 testing******************************/
 
     /**
      * Test of checkTaskDescription method, of class Task.
